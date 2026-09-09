@@ -8,8 +8,8 @@ app.post('/signup', (req, res) => {
 ```
 req — "here's what came in"
 
-req is Express's packaged summary of everything about the incoming request. You're right that you mostly just read values out of it:
----
+req is Express's packaged summary of everything about the incoming request. You're right that you mostly just read values out of it:  
+
 ```javascript
 req.body    // data sent in the request (e.g. { name, email, password } from a POST)
 req.params  // values from the URL itself, e.g. /users/:id → req.params.id
