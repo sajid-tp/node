@@ -6,7 +6,7 @@ app.post('/signup', (req, res) => {
   // Express already built req and res before this function even runs
 });
 ```
-req — "here's what came in"
+### req — "here's what came in"
 
 req is Express's packaged summary of everything about the incoming request. You're right that you mostly just read values out of it:  
 
@@ -18,7 +18,7 @@ req.headers // metadata like content-type, authorization token, etc.
 ```
 You don't modify these to send anything back — they're just incoming information, already filled in by Express (with help from middleware like express.json(), which is what parses req.body for you).
 
-- res — "here's what you can send back"
+### res — "here's what you can send back"
 
 - res is different — it's not data that's already there, it's a toolkit of methods you call when you're ready to send something back:
 
