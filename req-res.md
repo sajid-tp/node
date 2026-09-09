@@ -30,5 +30,6 @@ res.send("text")      // send plain text/HTML back, ends the request
 Nothing goes back to the client until you call one of these. Express builds the empty res object, but the actual response only gets sent when your code decides to send it.
 
 So your one-line summary, slightly sharpened
-
+```
 req and res are objects that Express creates for every request — req holds the incoming request details, and res is a toolkit you use to build and send the outgoing response.
+```
