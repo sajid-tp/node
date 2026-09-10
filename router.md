@@ -26,3 +26,13 @@ router.post('/login', login);
 router.get('/profile', getProfile);
 ```
 each of these three lines is just adding one more entry to that same router's stack — you're right that they all accumulate onto the same router object. Nothing executes yet; you're just building up a lookup table of "if a request matches this method+path, call this function."
+
+Where the handler actually runs
+
+The functions only get called later, when an actual HTTP request comes in and gets routed through:
+```
+Request arrives → app.js matches prefix (`/api/auth`) → hands off to router
+→ router scans its stack top-to-bottom → finds matching method+path
+→ calls the corresponding handler(req, res)
+```
+This is also why route order matters within a router — Express checks entries in the order you registered them, and uses the first match it finds. If you accidentally registered two routes with overlapping patterns, whichever was added first wins.
